@@ -1,17 +1,17 @@
 import asyncio
-
-from asyc_requests  import fetch_all_characters
+from asyc_requests import fetch_all_characters
 from db import insert_all_characters
-import logging
-
-logging.basicConfig(level=logging.INFO)
 
 async def main():
     try:
+        print("Начало выгрузки данных")
         characters = await fetch_all_characters()
+        print("Начало загрузки в базу")
         await insert_all_characters(characters)
+        print('Выгрузка завершена')
+
     except Exception as e:
-        logging.error(f"Ошибка: {e}")
+        print(f"Ошибка: {e}")
 
 if __name__ == "__main__":
     asyncio.run(main())

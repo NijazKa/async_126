@@ -11,5 +11,9 @@ CREATE TABLE characters (
     mass TEXT,
     name TEXT,
     skin_color TEXT
+    films TEXT,
+    species TEXT,
+    starships TEXT,
+    vehicles TEXT
 );
 "
